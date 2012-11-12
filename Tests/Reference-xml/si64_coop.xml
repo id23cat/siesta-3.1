@@ -1,0 +1,736 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cml convention="CMLComp" fileId="si64_coop.xml" xmlns="http://www.xml-cml.org/schema" xmlns:siesta="http://www.uam.es/siesta/namespace" xmlns:siestaUnits="http://www.uam.es/siesta/namespace/units" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:fpx="http://www.uszla.me.uk/fpx" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:units="http://www.uszla.me.uk/FoX/units" xmlns:cmlUnits="http://www.xml-cml.org/units/units" xmlns:siUnits="http://www.xml-cml.org/units/siUnits" xmlns:atomicUnits="http://www.xml-cml.org/units/atomic">
+  <metadata name="UUID" content="41013510-9380-11e0-6b6b-483aff1ce18f"/>
+  <metadataList>
+    <metadata name="siesta:Program" content="Siesta"/>
+    <metadata name="siesta:Version" content="                                       siesta-3.1"/>
+    <metadata name="siesta:Arch" content="ifort11-macosx64"/>
+    <metadata name="siesta:Flags" content="ifort  -O2"/>
+    <metadata name="siesta:StartTime" content="2011-06-10T14-39-24"/>
+    <metadata name="siesta:Mode" content="Serial"/>
+    <metadata name="siesta:Nodes" content="         1"/>
+    <metadata name="siesta:NetCDF" content="false"/>
+  </metadataList>
+  <module title="Initial System">
+    <molecule>
+      <atomArray>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">2.052243389263e1 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">0.000000000000e0 2.052243389263e1 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:angstrom" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 2.052243389263e1</latticeVector>
+    </lattice>
+    <property dictRef="siesta:shape">
+      <scalar dataType="xsd:string">bulk</scalar>
+    </property>
+  </module>
+  <parameterList title="Input Parameters">
+    <parameter dictRef="siesta:sname" name="SystemName">
+      <scalar dataType="xsd:string">64-atom silicon</scalar>
+    </parameter>
+    <parameter dictRef="siesta:slabel" name="SystemLabel">
+      <scalar dataType="xsd:string">si64_coop</scalar>
+    </parameter>
+    <parameter dictRef="siesta:verbosity" name="LongOutput">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter title="NumberOfSpecies" dictRef="siesta:ns">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">1</scalar>
+    </parameter>
+    <parameter name="WriteDenChar">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter name="WriteMullikenPop">
+      <scalar dataType="xsd:integer" units="cmlUnits:dimensionless">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:g2max" name="MeshCutOff">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry">4.000000000000e1</scalar>
+    </parameter>
+    <parameter dictRef="siesta:NetCharge" name="NetCharge">
+      <scalar dataType="fpx:real" units="siestaUnits:e__">0.000000000000e0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:maxscf" name="MaxSCFIterations">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">50</scalar>
+    </parameter>
+    <parameter dictRef="siesta:maxsav" name="DM.NumberPulay">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">3</scalar>
+    </parameter>
+    <parameter dictRef="siesta:broyden_maxit" name="DM.NumberBroyden">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:mix" name="DM.MixSCF1">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:pulfile" name="DM.PulayOnFile">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:avoid_first_after_kick" name="DM.Pulay.Avoid.First.After.Kick">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:wmix" name="DM.MixingWeight">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">3.000000000000e-1</scalar>
+    </parameter>
+    <parameter dictRef="siesta:occtol" name="DM.OccupancyTolerance">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">1.000000000000e-12</scalar>
+    </parameter>
+    <parameter dictRef="siesta:nkick" name="DM.NumberKick">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:wmixkick" name="DM.KickMixingWeight">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">5.000000000000e-1</scalar>
+    </parameter>
+    <parameter dictRef="siesta:dDtol" name="DM.Tolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eAng_3">1.000000000000e-3</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ReqEnergyConv" name="DM.RequireEnergyConvergence">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:dEtol" name="DM.EnergyTolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eV">1.000000000000e-4</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ReqHarrisConv" name="DM.RequireHarrisConvergence">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:Harris_tolerance" name="DM.HarrisTolerance">
+      <scalar dataType="fpx:real" units="siestaUnits:eV">7.349806700084e-6</scalar>
+    </parameter>
+    <parameter dictRef="siesta:usesavedm" name="DM.UseSaveDM">
+      <scalar dataType="xsd:boolean">true</scalar>
+    </parameter>
+    <parameter dictRef="siesta:negl" name="NeglNonOverlapInt">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:SCFmethod" name="SolutionMethod">
+      <scalar dataType="xsd:string">diagon</scalar>
+    </parameter>
+    <parameter dictRef="siesta:DaC" name="Diag.DivideAndConquer">
+      <scalar dataType="xsd:boolean">true</scalar>
+    </parameter>
+    <parameter dictRef="siesta:MemoryFactor" name="Diag.Memory">
+      <scalar dataType="fpx:real" units="cmlUnits:dimensionless">1.000000000000e0</scalar>
+    </parameter>
+    <parameter dictRef="siesta:etemp" name="ElectronicTemperature">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry">1.837449711227e-3</scalar>
+    </parameter>
+    <parameter dictRef="siesta:fixspin" name="FixSpin">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter dictRef="siesta:ts" name="TotalSpin">
+      <scalar dataType="fpx:real" units="siestaUnits:eSpin">0.000000000000e0</scalar>
+    </parameter>
+    <parameter name="MD.TypeOfRun">
+      <scalar dataType="xsd:string">CG</scalar>
+    </parameter>
+    <parameter name="MD.UseSaveCG">
+      <scalar dataType="xsd:boolean">false</scalar>
+    </parameter>
+    <parameter name="MD.NumCGSteps">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">0</scalar>
+    </parameter>
+    <parameter name="MD.MaxCGDispl">
+      <scalar dataType="fpx:real" units="siestaUnits:Bohr">1.889726877774e-1</scalar>
+    </parameter>
+    <parameter name="MD.MaxForceTol">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry_Bohr">1.555739507650e-3</scalar>
+    </parameter>
+    <parameter name="MD.BulkModulus">
+      <scalar dataType="fpx:real" units="siestaUnits:Ry_Bohr__3">6.797730000000e-3</scalar>
+    </parameter>
+  </parameterList>
+  <propertyList dictRef="siesta:kpoints" title="k-points">
+    <property dictRef="siesta:nkpnt">
+      <scalar dataType="xsd:integer" units="cmlUnits:countable">4</scalar>
+    </property>
+    <kpoint coords="7.654045007591e-2 7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+    <kpoint coords="-7.654045007591e-2 7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+    <kpoint coords="7.654045007591e-2 -7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+    <kpoint coords="-7.654045007591e-2 -7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+    <property dictRef="siesta:kcutof">
+      <scalar dataType="fpx:real" units="siestaUnits:angstrom">1.086000000000e1</scalar>
+    </property>
+  </propertyList>
+  <property dictRef="siesta:kscell">
+    <matrix rows="3" columns="3" dataType="xsd:integer" units="siestaUnits:Ang">0 2 0 0 0 2 2 0 0</matrix>
+  </property>
+  <property dictRef="siesta:kdispl">
+    <array size="3" dataType="fpx:real" units="siestaUnits:Ang">5.000000000000e-1 5.000000000000e-1 5.000000000000e-1</array>
+  </property>
+  <module serial="1" dictRef="CG" role="step">
+    <molecule>
+      <atomArray>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">1.086000000000e1 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 1.086000000000e1 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 1.086000000000e1</latticeVector>
+    </lattice>
+    <crystal title="Lattice Parameters">
+      <cellParameter latticeType="real" parameterType="length" units="units:angstrom">10.860000 10.860000 10.860000</cellParameter>
+      <cellParameter latticeType="real" parameterType="angle" units="units:degree">90.000000 90.000000 90.000000</cellParameter>
+    </crystal>
+    <module serial="1" dictRef="SCF" role="step">
+      <propertyList>
+        <property dictRef="siesta:ntm" title="Mesh">
+          <array size="3" dataType="xsd:integer" units="cmlUnits:countable">48 48 48</array>
+        </property>
+        <property dictRef="siesta:g2max" title="Requested Cut-Off">
+          <scalar dataType="fpx:real" units="siestaUnits:Ry">4.000000000000e1</scalar>
+        </property>
+        <property dictRef="siesta:g2mesh" title="Actual Cut-Off">
+          <scalar dataType="fpx:real" units="siestaUnits:Ry">5.399138761793e1</scalar>
+        </property>
+      </propertyList>
+      <propertyList title="Energy Decomposition">
+        <property dictRef="siesta:Ebs">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2335.427990</scalar>
+        </property>
+        <property dictRef="siesta:Eions">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">12185.667955</scalar>
+        </property>
+        <property dictRef="siesta:Ena">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">3675.141824</scalar>
+        </property>
+        <property dictRef="siesta:Ekin">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">2572.945558</scalar>
+        </property>
+        <property dictRef="siesta:Enl">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">1153.571630</scalar>
+        </property>
+        <property dictRef="siesta:DEna">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-0.000285   </scalar>
+        </property>
+        <property dictRef="siesta:DUscf">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000           </scalar>
+        </property>
+        <property dictRef="siesta:DUext">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:Exc">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2070.626830</scalar>
+        </property>
+        <property dictRef="siesta:Ecorrec">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:Emad">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:Emeta">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:Emm">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:Ekinion">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+        </property>
+        <property dictRef="siesta:EharrsK">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6846.336132</scalar>
+        </property>
+        <property dictRef="siesta:EtotK">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6854.636058</scalar>
+        </property>
+        <property dictRef="siesta:FreeEK">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6854.636058</scalar>
+        </property>
+      </propertyList>
+      <propertyList title="SCF Cycle">
+        <property dictRef="siesta:Eharrs">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6846.3361322</scalar>
+        </property>
+        <property dictRef="siesta:FreeE">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6854.6360580</scalar>
+        </property>
+        <property dictRef="siesta:Ef">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2.7038764</scalar>
+        </property>
+      </propertyList>
+    </module>
+    <module serial="2" dictRef="SCF" role="step">
+      <propertyList title="SCF Cycle">
+        <property dictRef="siesta:Eharrs">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4818937</scalar>
+        </property>
+        <property dictRef="siesta:FreeE">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4120466</scalar>
+        </property>
+        <property dictRef="siesta:Ef">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2.9546839</scalar>
+        </property>
+      </propertyList>
+    </module>
+    <module serial="3" dictRef="SCF" role="step">
+      <propertyList title="SCF Cycle">
+        <property dictRef="siesta:Eharrs">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4801208</scalar>
+        </property>
+        <property dictRef="siesta:FreeE">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4807069</scalar>
+        </property>
+        <property dictRef="siesta:Ef">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2.9502982</scalar>
+        </property>
+      </propertyList>
+    </module>
+    <module serial="4" dictRef="SCF" role="step">
+      <propertyList title="SCF Cycle">
+        <property dictRef="siesta:Eharrs">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4794391</scalar>
+        </property>
+        <property dictRef="siesta:FreeE">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4779180</scalar>
+        </property>
+        <property dictRef="siesta:Ef">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-2.9436407</scalar>
+        </property>
+      </propertyList>
+    </module>
+    <module title="SCF Finalization">
+      <propertyList title="Final KS Energy">
+        <property dictRef="siesta:E_KS">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.478244</scalar>
+        </property>
+        <property dictRef="siesta:E_KS_egg">
+          <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.478244</scalar>
+        </property>
+      </propertyList>
+      <propertyList title="Forces">
+        <property dictRef="siesta:forces">
+          <matrix rows="3" columns="64" dataType="fpx:real" units="siestaUnits:evpa">-6.924793669369e-7 -7.885727424639e-7 -3.980730146673e-7 -3.686106791191e-7 5.933606282020e-8 3.226118125416e-7 -3.803009752663e-7 1.786995706220e-8 -4.747249684536e-7 6.531533732591e-7 3.755262168183e-7 -3.234173689163e-7 -4.890373332289e-7 -9.032692134013e-8 -2.136240339991e-7 8.635630385326e-8 2.027179800856e-7 -8.440768873789e-9 -6.622785769155e-7 -4.522174582733e-7 7.197985330595e-8 -1.612301624296e-7 3.169037513372e-7 5.111033195298e-7 -6.012460549862e-7 -5.761632359508e-7 -2.942565118106e-7 -3.139269083212e-7 2.580562598757e-7 4.805038709144e-7 -2.446109742175e-7 1.118295041267e-7 -4.814101414761e-7 -3.232903057542e-7 -5.971519612503e-8 -6.967076893993e-7 -5.216147185103e-7 -2.905023411287e-7 -3.621044161936e-7 -7.367253224487e-7 4.031671636953e-7 9.725595297326e-8 -8.351556797097e-7 -3.762800955417e-7 2.283109179509e-7 -8.187836866277e-7 4.461302370685e-8 7.499318185706e-7 -1.586989208636e-7 -4.652328964389e-7 
+-4.546080194491e-7 -1.355381865486e-9 8.152532867583e-8 4.427522504877e-7 1.299636335789e-8 -2.400432290167e-7 -4.675979470741e-7 8.284736751234e-7 -5.342926087121e-7 -1.282096720985e-7 -2.088321408209e-7 -3.460911751224e-7 -1.421013679442e-6 -5.528765892576e-7 -4.061753706395e-7 -6.239685902668e-7 -8.028323001630e-7 -5.095593131830e-7 4.415189954140e-7 -1.125823082880e-7 -1.236516464569e-7 5.215544734956e-7 -3.854105814361e-7 -2.661463990176e-7 -1.478191356306e-6 -4.024290308390e-8 2.978363626973e-8 7.747512713535e-7 1.989147221135e-7 -2.085837301939e-8 -7.621209470040e-7 7.146243479248e-7 4.157948116277e-7 -5.469895007138e-7 -6.729092049403e-7 2.535356501434e-7 -7.784624203117e-7 -2.209267791478e-7 6.658364490863e-8 -5.000097897432e-7 -4.963932100208e-7 -9.294983778439e-7 -4.197051221937e-7 -4.023753579687e-7 -3.591952452594e-7 -4.518761203795e-7 -5.690532486845e-7 -7.551917204317e-7 -6.878364145100e-7 -3.428090993612e-7 -1.794091707276e-7 7.261149034719e-7 -2.248367902618e-7 2.923234735793e-7 
+-4.129594789691e-7 -3.128429771736e-8 -7.240882113544e-7 -4.818563059244e-7 -5.054896582488e-7 1.972701498207e-7 -1.184723982246e-6 -9.021381249109e-7 -2.552213419868e-7 -2.734315188930e-7 -5.626260039959e-7 -3.980082146498e-7 2.718688470869e-7 -2.489942292274e-7 -5.980021127031e-8 5.389600904790e-7 -5.769182867811e-7 -4.660107241823e-7 -1.111057679246e-6 -5.637653073055e-7 1.833989219333e-7 5.074274830100e-8 -2.266108549918e-7 6.471989556097e-8 -7.596632415266e-7 -1.212451625815e-7 -1.264342009255e-7 -5.691536312332e-7 -4.885600402121e-7 3.621864551171e-7 -6.007906807645e-7 -2.325780305918e-7 1.516535688299e-7 -4.228006623800e-7 -9.972295481936e-7 -1.068998064604e-6 1.541104674483e-7 -1.106753536955e-6 -5.742835130726e-7 9.035619853212e-9 6.837300558397e-8 -6.914767777899e-7 -9.642684390201e-7 5.240834702168e-8 -3.936585222635e-7 -2.223466062796e-9 3.444525567634e-7 5.742963709399e-8 -4.084698066925e-7 3.693323396466e-7 3.345883383710e-7 -4.002852562990e-7 -1.163155206744e-7 -2.063361855744e-7 
+-1.264636722670e-6 -5.055511726284e-7 -2.847931638158e-7 -6.603321194647e-7 -2.610014981542e-7 -1.104462099605e-6 1.449276716345e-7 -6.595311535485e-7 -9.121371571922e-7 -4.393324915229e-7 -6.394987807591e-7 -9.508594431352e-7 -8.817659397632e-7 -6.372864904824e-7 -5.710347835474e-7 -2.277166946534e-7 -2.560034207446e-7 1.284366313568e-7 -6.129283824641e-7 3.392258434871e-8 -7.797389520134e-8 -8.746802905817e-7 -3.450081780986e-7 4.558271184672e-7 -1.022723545534e-6 -2.763454234798e-7 -2.479882928093e-7 -6.826102933831e-7 -5.367012266264e-7 -1.010285159746e-6 4.901632450557e-7 -6.372888946499e-7 -8.577008757536e-7 -2.141786942852e-7</matrix>
+        </property>
+        <property dictRef="siesta:ftot">
+          <array size="3" dataType="fpx:real" units="siestaUnits:evpa">-2.041314278320e-5 -1.388559717389e-5 -1.941773968699e-5</array>
+        </property>
+        <property dictRef="siesta:fmax">
+          <scalar dataType="fpx:real" units="siestaUnits:evpa">1.478191356306e-6</scalar>
+        </property>
+        <property dictRef="siesta:fres">
+          <scalar dataType="fpx:real" units="siestaUnits:evpa">5.316905048357e-7</scalar>
+        </property>
+        <property dictRef="siesta:cfmax">
+          <scalar dataType="fpx:real" units="siestaUnits:evpa">1.478191356306e-6</scalar>
+        </property>
+      </propertyList>
+    </module>
+    <molecule>
+      <atomArray>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">1.086000000000e1 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 1.086000000000e1 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 1.086000000000e1</latticeVector>
+    </lattice>
+  </module>
+  <module title="Finalization">
+    <molecule>
+      <atomArray>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="2.715000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="4.072500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="0.000000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="1.357500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="0.000000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="1.357500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="2.715000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="4.072500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="0.000000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="1.357500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="2.715000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="4.072500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="0.000000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="1.357500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="2.715000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="4.072500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="5.430000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="6.787500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="5.430000000000e0" y3="8.145000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="6.787500000000e0" y3="9.502500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="5.430000000000e0" z3="8.145000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="6.787500000000e0" z3="9.502500000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="8.145000000000e0" y3="8.145000000000e0" z3="5.430000000000e0" ref="siesta:e001"/>
+        <atom elementType="Si" x3="9.502500000000e0" y3="9.502500000000e0" z3="6.787500000000e0" ref="siesta:e001"/>
+      </atomArray>
+    </molecule>
+    <lattice dictRef="siesta:ucell">
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">1.086000000000e1 0.000000000000e0 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 1.086000000000e1 0.000000000000e0</latticeVector>
+      <latticeVector units="siestaUnits:Ang" dictRef="cml:latticeVector">0.000000000000e0 0.000000000000e0 1.086000000000e1</latticeVector>
+    </lattice>
+    <propertyList title="Eigenvalues">
+      <property dictRef="siesta:E_Fermi" title="Fermi Energy">
+        <scalar dataType="fpx:real" units="siestaUnits:ev">-2.94364</scalar>
+      </property>
+      <property dictRef="siesta:nkpoints" title="Number of k-points">
+        <scalar dataType="xsd:integer" units="cmlUnits:countable">4</scalar>
+      </property>
+      <propertyList dictRef="siesta:kpt_band">
+        <kpoint coords="7.654045007591e-2 7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+        <property dictRef="siesta:eigenenergies">
+          <array size="256" dataType="fpx:real" units="siestaUnits:ev">-1.180025515623e0 -1.143720809788e0 -1.143720807011e0 -1.143720803077e0 -1.106502870110e0 -1.106502867360e0 -1.106502863406e0 -1.072555257597e0 -1.067326865531e0 -1.067326862739e0 -1.067326858778e0 -1.034656985192e0 -1.034656979793e0 -1.034656976850e0 -1.034656974440e0 -1.034656973084e0 -1.034656971821e0 -1.017901541353e0 -1.017901535114e0 -1.017901530100e0 -9.812581432109e-1 -9.812581403991e-1 -9.812581362830e-1 -9.543508454735e-1 -9.543508405230e-1 -9.543508362060e-1 -9.406584264280e-1 -9.406584210026e-1 -9.406584181594e-1 -9.406584157617e-1 -9.406584139822e-1 -9.406584128450e-1 -8.232973577959e-1 -8.232973538610e-1 -8.232973518444e-1 -8.232973504010e-1 -8.232973496093e-1 -8.232973482504e-1 -8.155849533083e-1 -8.155849501981e-1 -8.155849466409e-1 -8.116775014459e-1 -8.116775005936e-1 -8.116774990943e-1 -8.019260025922e-1 -8.019260003966e-1 -8.019259975109e-1 -7.507984071747e-1 -7.414588477442e-1 -7.414588456281e-1 -7.414588438650e-1 
+-7.414588431951e-1 -7.414588422791e-1 -7.414588409554e-1 -6.738525052181e-1 -6.738525038844e-1 -6.738525014537e-1 -6.501415019733e-1 -6.501415013967e-1 -6.501415010872e-1 -6.106508446518e-1 -6.106508434923e-1 -6.106508417403e-1 -6.106508411586e-1 -6.106508399690e-1 -6.106508380306e-1 -6.064545780916e-1 -6.064545775799e-1 -6.064545771647e-1 -5.628797515059e-1 -5.628797498188e-1 -5.628797471635e-1 -5.556040946535e-1 -5.556040930104e-1 -5.556040909831e-1 -5.556040902963e-1 -5.556040881024e-1 -5.556040876605e-1 -5.447056607357e-1 -5.447056601078e-1 -5.447056593681e-1 -5.264748996892e-1 -5.264748990232e-1 -5.264748982110e-1 -5.264748959791e-1 -5.264748954793e-1 -5.264748939522e-1 -5.091109368731e-1 -5.091109352942e-1 -5.091109344160e-1 -5.057446740023e-1 -5.057446734259e-1 -5.057446719309e-1 -4.777284010326e-1 -4.777283989162e-1 -4.777283959383e-1 -4.770379297901e-1 -4.770379246943e-1 -4.770379200143e-1 -4.719028905814e-1 -4.719028884064e-1 -4.719028871176e-1 -4.495105143562e-1 -4.495105103468e-1 
+-4.495105073282e-1 -4.495105058935e-1 -4.495105038545e-1 -4.495105021475e-1 -4.492977609084e-1 -4.492977586828e-1 -4.492977573946e-1 -4.239365357137e-1 -4.239365341831e-1 -4.239365333690e-1 -4.199508176456e-1 -4.011571088213e-1 -4.011571065617e-1 -4.011571053475e-1 -3.957218757376e-1 -3.957218743330e-1 -3.957218717329e-1 -3.873525498205e-1 -3.873525486602e-1 -3.626989322149e-1 -3.626989298450e-1 -3.626989286412e-1 -3.169124991268e-1 -3.169124977426e-1 -1.352749730567e-1 -1.123461925540e-1 -1.123461919307e-1 -1.123461916472e-1 -1.059933967772e-1 -1.059933964628e-1 -1.059933946371e-1 -8.794228079261e-2 -7.998643436921e-2 -7.998643316610e-2 -7.998643131417e-2 -6.634975702019e-2 -6.634975517778e-2 -6.634975246799e-2 -5.600820053775e-2 -5.600819988336e-2 -5.600819832106e-2 -4.975503566680e-2 -4.975503456228e-2 -4.975503293308e-2 -3.578566082574e-2 -3.578565997876e-2 4.798894613891e-3 4.798896917673e-3 4.798900029834e-3 8.648234104552e-3 8.648238003756e-3 8.648240073604e-3 8.648242038241e-3 8.648243064309e-3 
+8.648244402454e-3 1.477964520977e-2 1.477964572005e-2 1.477964664777e-2 1.588748636147e-2 1.588748697453e-2 1.588748746105e-2 1.588749008371e-2 1.588749041865e-2 1.588749119872e-2 4.148703027787e-2 4.148703242553e-2 4.148703367454e-2 7.073623014044e-2 7.073623241358e-2 7.073623503030e-2 7.073623547098e-2 7.073623798965e-2 7.073623885579e-2 7.160197633182e-2 7.380519947202e-2 7.380520041501e-2 8.263090516948e-2 8.263090716702e-2 8.263090927068e-2 8.635144739741e-2 8.635145348968e-2 8.635145790863e-2 1.151800706260e-1 1.151800729592e-1 1.151800742166e-1 1.184453178904e-1 1.184453200710e-1 1.184453229094e-1 1.507291737631e-1 1.507291757670e-1 1.507291774765e-1 1.675041286890e-1 1.675041314017e-1 1.675041333350e-1 1.675041348058e-1 1.675041352176e-1 1.675041371374e-1 2.173218557403e-1 2.173218573108e-1 2.173218589729e-1 2.298803048370e-1 2.298803071418e-1 2.298803082812e-1 2.371883817755e-1 2.371883828323e-1 2.371883832158e-1 2.537290446370e-1 2.537290473131e-1 2.537290491336e-1 2.537290498031e-1 
+2.537290508583e-1 2.537290518541e-1 3.044171713104e-1 3.044171737832e-1 3.044171749330e-1 3.190474253447e-1 3.190474280920e-1 3.190474294804e-1 3.190474309290e-1 3.190474319420e-1 3.190474322024e-1 3.348922997910e-1 3.348923015399e-1 3.348923044856e-1 3.390624423842e-1 3.390624436506e-1 3.390624448532e-1 3.873605981975e-1 3.873605987675e-1 3.873606016316e-1 3.873606027141e-1 3.873606035536e-1 3.873606050847e-1 3.968551441878e-1 3.968551447018e-1 3.968551482120e-1 3.968551484850e-1 3.968551503794e-1 3.968551507537e-1 4.263160943776e-1 4.263160965128e-1 4.263160997985e-1 4.500460339961e-1 4.500460359466e-1 4.500460373494e-1 4.660387297503e-1 4.660387308767e-1 4.660387344903e-1 5.006199104479e-1 5.310256591414e-1 5.310256605174e-1 5.310256655399e-1</array>
+        </property>
+        <kpoint coords="-7.654045007591e-2 7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+        <property dictRef="siesta:eigenenergies">
+          <array size="256" dataType="fpx:real" units="siestaUnits:ev">-1.180025515635e0 -1.143720809398e0 -1.143720806025e0 -1.143720804409e0 -1.106502869782e0 -1.106502866394e0 -1.106502864739e0 -1.072555257637e0 -1.067326865123e0 -1.067326861770e0 -1.067326860213e0 -1.034656981537e0 -1.034656979861e0 -1.034656977991e0 -1.034656976556e0 -1.034656974026e0 -1.034656971037e0 -1.017901539007e0 -1.017901535092e0 -1.017901532371e0 -9.812581427515e-1 -9.812581394385e-1 -9.812581379899e-1 -9.543508433241e-1 -9.543508405252e-1 -9.543508382860e-1 -9.406584227319e-1 -9.406584213400e-1 -9.406584193145e-1 -9.406584177303e-1 -9.406584148723e-1 -9.406584121209e-1 -8.232973555271e-1 -8.232973547723e-1 -8.232973531896e-1 -8.232973514863e-1 -8.232973488210e-1 -8.232973481663e-1 -8.155849514222e-1 -8.155849502132e-1 -8.155849486783e-1 -8.116775025250e-1 -8.116775008840e-1 -8.116774981534e-1 -8.019260026342e-1 -8.019259996256e-1 -8.019259972815e-1 -7.507984068397e-1 -7.414588476512e-1 -7.414588461270e-1 -7.414588443856e-1 
+-7.414588430646e-1 -7.414588424329e-1 -7.414588407125e-1 -6.738525056862e-1 -6.738525033376e-1 -6.738525009938e-1 -6.501415022414e-1 -6.501415016723e-1 -6.501415006312e-1 -6.106508445266e-1 -6.106508432081e-1 -6.106508415858e-1 -6.106508408210e-1 -6.106508399015e-1 -6.106508388212e-1 -6.064545781839e-1 -6.064545777492e-1 -6.064545772797e-1 -5.628797501980e-1 -5.628797497789e-1 -5.628797486968e-1 -5.556040944818e-1 -5.556040933674e-1 -5.556040908737e-1 -5.556040899528e-1 -5.556040885307e-1 -5.556040872468e-1 -5.447056609882e-1 -5.447056601450e-1 -5.447056594558e-1 -5.264748996298e-1 -5.264748984707e-1 -5.264748978554e-1 -5.264748964302e-1 -5.264748957537e-1 -5.264748944420e-1 -5.091109366692e-1 -5.091109349352e-1 -5.091109344817e-1 -5.057446742415e-1 -5.057446731061e-1 -5.057446724834e-1 -4.777284010296e-1 -4.777283981918e-1 -4.777283965961e-1 -4.770379275670e-1 -4.770379247095e-1 -4.770379225059e-1 -4.719028899765e-1 -4.719028885829e-1 -4.719028872662e-1 -4.495105112876e-1 -4.495105110690e-1 
+-4.495105079239e-1 -4.495105069878e-1 -4.495105050429e-1 -4.495105025623e-1 -4.492977603191e-1 -4.492977588304e-1 -4.492977575345e-1 -4.239365353840e-1 -4.239365337142e-1 -4.239365331775e-1 -4.199508175425e-1 -4.011571080192e-1 -4.011571065597e-1 -4.011571053680e-1 -3.957218765106e-1 -3.957218742300e-1 -3.957218718592e-1 -3.873525502250e-1 -3.873525483318e-1 -3.626989314014e-1 -3.626989297470e-1 -3.626989286070e-1 -3.169124993074e-1 -3.169124971896e-1 -1.352749745334e-1 -1.123461926945e-1 -1.123461923068e-1 -1.123461914744e-1 -1.059933978214e-1 -1.059933969833e-1 -1.059933952541e-1 -8.794228262481e-2 -7.998643483753e-2 -7.998643313735e-2 -7.998643256568e-2 -6.634975640541e-2 -6.634975592142e-2 -6.634975424108e-2 -5.600820168423e-2 -5.600820074098e-2 -5.600819847746e-2 -4.975503650411e-2 -4.975503526098e-2 -4.975503388035e-2 -3.578566081140e-2 -3.578566014023e-2 4.798896303290e-3 4.798899294101e-3 4.798901282684e-3 8.648238040766e-3 8.648239261378e-3 8.648241053301e-3 8.648242329359e-3 8.648244737009e-3 
+8.648246294415e-3 1.477964601133e-2 1.477964659413e-2 1.477964732788e-2 1.588748675058e-2 1.588748686557e-2 1.588748916256e-2 1.588749029945e-2 1.588749090200e-2 1.588749202670e-2 4.148703058638e-2 4.148703173994e-2 4.148703308455e-2 7.073623191011e-2 7.073623266738e-2 7.073623342234e-2 7.073623465220e-2 7.073623623654e-2 7.073623716168e-2 7.160197792332e-2 7.380519981328e-2 7.380520045404e-2 8.263090537537e-2 8.263090666891e-2 8.263090748982e-2 8.635145191406e-2 8.635145469914e-2 8.635145600229e-2 1.151800709640e-1 1.151800724411e-1 1.151800737610e-1 1.184453187767e-1 1.184453213284e-1 1.184453234403e-1 1.507291738903e-1 1.507291758877e-1 1.507291761161e-1 1.675041302118e-1 1.675041311339e-1 1.675041313369e-1 1.675041326269e-1 1.675041353071e-1 1.675041357221e-1 2.173218558722e-1 2.173218562680e-1 2.173218572091e-1 2.298803054864e-1 2.298803067598e-1 2.298803078911e-1 2.371883811073e-1 2.371883817707e-1 2.371883829536e-1 2.537290452249e-1 2.537290469567e-1 2.537290478731e-1 2.537290492050e-1 
+2.537290494788e-1 2.537290515204e-1 3.044171719894e-1 3.044171735042e-1 3.044171746485e-1 3.190474263101e-1 3.190474281330e-1 3.190474296962e-1 3.190474301020e-1 3.190474309475e-1 3.190474329577e-1 3.348923003181e-1 3.348923027896e-1 3.348923045399e-1 3.390624427117e-1 3.390624432545e-1 3.390624441652e-1 3.873605975195e-1 3.873605991469e-1 3.873606013061e-1 3.873606024883e-1 3.873606034512e-1 3.873606048771e-1 3.968551443247e-1 3.968551454041e-1 3.968551478297e-1 3.968551486617e-1 3.968551503203e-1 3.968551509981e-1 4.263160953441e-1 4.263160982574e-1 4.263161007648e-1 4.500460344461e-1 4.500460357899e-1 4.500460366684e-1 4.660387307969e-1 4.660387316795e-1 4.660387327530e-1 5.006199115419e-1 5.310256582818e-1 5.310256607073e-1 5.310256650116e-1</array>
+        </property>
+        <kpoint coords="7.654045007591e-2 -7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+        <property dictRef="siesta:eigenenergies">
+          <array size="256" dataType="fpx:real" units="siestaUnits:ev">-1.180025515636e0 -1.143720811067e0 -1.143720806072e0 -1.143720802695e0 -1.106502871450e0 -1.106502866422e0 -1.106502863051e0 -1.072555257584e0 -1.067326866771e0 -1.067326861811e0 -1.067326858481e0 -1.034656982541e0 -1.034656981617e0 -1.034656977418e0 -1.034656975764e0 -1.034656972912e0 -1.034656970882e0 -1.017901539545e0 -1.017901534261e0 -1.017901532787e0 -9.812581444170e-1 -9.812581393775e-1 -9.812581360666e-1 -9.543508438769e-1 -9.543508398236e-1 -9.543508384895e-1 -9.406584237500e-1 -9.406584227311e-1 -9.406584185468e-1 -9.406584169364e-1 -9.406584143351e-1 -9.406584119418e-1 -8.232973570493e-1 -8.232973552244e-1 -8.232973519922e-1 -8.232973513980e-1 -8.232973486462e-1 -8.232973474351e-1 -8.155849519844e-1 -8.155849498059e-1 -8.155849483595e-1 -8.116775025485e-1 -8.116775001965e-1 -8.116774984399e-1 -8.019260041064e-1 -8.019259996733e-1 -8.019259966282e-1 -7.507984071358e-1 -7.414588489406e-1 -7.414588460608e-1 -7.414588444813e-1 
+-7.414588427945e-1 -7.414588417030e-1 -7.414588398695e-1 -6.738525070327e-1 -6.738525029677e-1 -6.738525005307e-1 -6.501415023596e-1 -6.501415013834e-1 -6.501415006471e-1 -6.106508447261e-1 -6.106508425674e-1 -6.106508420075e-1 -6.106508409125e-1 -6.106508396396e-1 -6.106508387121e-1 -6.064545783303e-1 -6.064545776859e-1 -6.064545771019e-1 -5.628797511120e-1 -5.628797495311e-1 -5.628797488622e-1 -5.556040940433e-1 -5.556040932103e-1 -5.556040905784e-1 -5.556040893836e-1 -5.556040885517e-1 -5.556040873166e-1 -5.447056608440e-1 -5.447056598492e-1 -5.447056593687e-1 -5.264749016018e-1 -5.264748987320e-1 -5.264748977890e-1 -5.264748962643e-1 -5.264748949896e-1 -5.264748937044e-1 -5.091109364041e-1 -5.091109348990e-1 -5.091109339529e-1 -5.057446746602e-1 -5.057446733574e-1 -5.057446719618e-1 -4.777284026759e-1 -4.777283984243e-1 -4.777283957595e-1 -4.770379288168e-1 -4.770379242413e-1 -4.770379230284e-1 -4.719028908362e-1 -4.719028883128e-1 -4.719028858739e-1 -4.495105125251e-1 -4.495105115069e-1 
+-4.495105091620e-1 -4.495105063495e-1 -4.495105052225e-1 -4.495105026211e-1 -4.492977611915e-1 -4.492977585591e-1 -4.492977560725e-1 -4.239365350323e-1 -4.239365334855e-1 -4.239365326209e-1 -4.199508180413e-1 -4.011571088526e-1 -4.011571062794e-1 -4.011571037358e-1 -3.957218778328e-1 -3.957218745032e-1 -3.957218719799e-1 -3.873525497832e-1 -3.873525482281e-1 -3.626989322418e-1 -3.626989294619e-1 -3.626989268192e-1 -3.169124986444e-1 -3.169124970743e-1 -1.352749750297e-1 -1.123461924089e-1 -1.123461920845e-1 -1.123461916153e-1 -1.059933977659e-1 -1.059933966540e-1 -1.059933963371e-1 -8.794228325480e-2 -7.998643588179e-2 -7.998643331459e-2 -7.998643216620e-2 -6.634975693716e-2 -6.634975532290e-2 -6.634975457988e-2 -5.600820207260e-2 -5.600820066270e-2 -5.600819829557e-2 -4.975503709716e-2 -4.975503524057e-2 -4.975503366093e-2 -3.578566059395e-2 -3.578565980630e-2 4.798894628660e-3 4.798899252462e-3 4.798903184372e-3 8.648236958791e-3 8.648238011233e-3 8.648242009825e-3 8.648242872345e-3 8.648245412847e-3 
+8.648247298840e-3 1.477964551846e-2 1.477964722725e-2 1.477964779970e-2 1.588748498871e-2 1.588748703443e-2 1.588748892346e-2 1.588749034254e-2 1.588749099178e-2 1.588749439716e-2 4.148702971354e-2 4.148703190993e-2 4.148703440962e-2 7.073623088924e-2 7.073623320793e-2 7.073623377661e-2 7.073623503900e-2 7.073623591297e-2 7.073623723045e-2 7.160197774504e-2 7.380520008126e-2 7.380520096340e-2 8.263090381171e-2 8.263090680555e-2 8.263090843668e-2 8.635145052016e-2 8.635145418580e-2 8.635145693286e-2 1.151800701394e-1 1.151800726265e-1 1.151800753178e-1 1.184453168211e-1 1.184453215580e-1 1.184453239856e-1 1.507291740348e-1 1.507291756824e-1 1.507291768921e-1 1.675041301806e-1 1.675041305255e-1 1.675041321190e-1 1.675041329436e-1 1.675041342561e-1 1.675041357660e-1 2.173218551512e-1 2.173218562768e-1 2.173218577218e-1 2.298803046927e-1 2.298803069556e-1 2.298803096010e-1 2.371883810753e-1 2.371883819266e-1 2.371883830549e-1 2.537290435687e-1 2.537290459781e-1 2.537290476938e-1 2.537290490731e-1 
+2.537290509439e-1 2.537290513704e-1 3.044171712467e-1 3.044171737193e-1 3.044171765329e-1 3.190474256592e-1 3.190474265494e-1 3.190474287848e-1 3.190474304857e-1 3.190474317290e-1 3.190474329483e-1 3.348922987687e-1 3.348923020126e-1 3.348923054699e-1 3.390624423331e-1 3.390624434023e-1 3.390624447081e-1 3.873605960618e-1 3.873605995736e-1 3.873606014115e-1 3.873606021295e-1 3.873606044310e-1 3.873606066141e-1 3.968551440187e-1 3.968551454272e-1 3.968551482336e-1 3.968551489130e-1 3.968551509329e-1 3.968551519823e-1 4.263160933650e-1 4.263160979435e-1 4.263161017319e-1 4.500460345524e-1 4.500460361284e-1 4.500460375587e-1 4.660387295819e-1 4.660387318174e-1 4.660387324830e-1 5.006199110232e-1 5.310256585723e-1 5.310256613340e-1 5.310256645243e-1</array>
+        </property>
+        <kpoint coords="-7.654045007591e-2 -7.654045007591e-2 7.654045007591e-2" weight="2.500000000000e-1"/>
+        <property dictRef="siesta:eigenenergies">
+          <array size="256" dataType="fpx:real" units="siestaUnits:ev">-1.180025515634e0 -1.143720811508e0 -1.143720806433e0 -1.143720801909e0 -1.106502871862e0 -1.106502866778e0 -1.106502862281e0 -1.072555257502e0 -1.067326867125e0 -1.067326862169e0 -1.067326857690e0 -1.034656985606e0 -1.034656981090e0 -1.034656977357e0 -1.034656974560e0 -1.034656971779e0 -1.034656970974e0 -1.017901541912e0 -1.017901534456e0 -1.017901530421e0 -9.812581444197e-1 -9.812581396051e-1 -9.812581353042e-1 -9.543508458371e-1 -9.543508399053e-1 -9.543508365479e-1 -9.406584269232e-1 -9.406584222207e-1 -9.406584185605e-1 -9.406584155316e-1 -9.406584130334e-1 -9.406584121673e-1 -8.232973582956e-1 -8.232973547320e-1 -8.232973518242e-1 -8.232973506190e-1 -8.232973482962e-1 -8.232973476341e-1 -8.155849533789e-1 -8.155849496175e-1 -8.155849468763e-1 -8.116775012148e-1 -8.116775007794e-1 -8.116774985833e-1 -8.019260056162e-1 -8.019260003736e-1 -8.019259958697e-1 -7.507984075859e-1 -7.414588481622e-1 -7.414588459169e-1 -7.414588447739e-1 
+-7.414588424977e-1 -7.414588414084e-1 -7.414588401343e-1 -6.738525078610e-1 -6.738525034886e-1 -6.738525000012e-1 -6.501415022776e-1 -6.501415015151e-1 -6.501415004757e-1 -6.106508445881e-1 -6.106508430238e-1 -6.106508427235e-1 -6.106508409860e-1 -6.106508394213e-1 -6.106508376456e-1 -6.064545779613e-1 -6.064545776569e-1 -6.064545771702e-1 -5.628797517776e-1 -5.628797494233e-1 -5.628797490701e-1 -5.556040931647e-1 -5.556040922248e-1 -5.556040904403e-1 -5.556040895939e-1 -5.556040886161e-1 -5.556040878446e-1 -5.447056602753e-1 -5.447056598791e-1 -5.447056591506e-1 -5.264749011963e-1 -5.264748994347e-1 -5.264748985531e-1 -5.264748958782e-1 -5.264748944577e-1 -5.264748938560e-1 -5.091109367805e-1 -5.091109353382e-1 -5.091109325674e-1 -5.057446743444e-1 -5.057446735269e-1 -5.057446719086e-1 -4.777284032974e-1 -4.777283991403e-1 -4.777283953602e-1 -4.770379304736e-1 -4.770379243397e-1 -4.770379224872e-1 -4.719028905532e-1 -4.719028882444e-1 -4.719028856433e-1 -4.495105155192e-1 -4.495105116112e-1 
+-4.495105097687e-1 -4.495105057756e-1 -4.495105039818e-1 -4.495105028274e-1 -4.492977608514e-1 -4.492977584953e-1 -4.492977558362e-1 -4.239365354415e-1 -4.239365338343e-1 -4.239365310632e-1 -4.199508185602e-1 -4.011571084570e-1 -4.011571061659e-1 -4.011571034823e-1 -3.957218792380e-1 -3.957218751586e-1 -3.957218714593e-1 -3.873525493270e-1 -3.873525482376e-1 -3.626989317221e-1 -3.626989293501e-1 -3.626989265630e-1 -3.169124981616e-1 -3.169124969830e-1 -1.352749748773e-1 -1.123461923940e-1 -1.123461919489e-1 -1.123461913326e-1 -1.059933974142e-1 -1.059933967991e-1 -1.059933961053e-1 -8.794228305592e-2 -7.998643550155e-2 -7.998643388724e-2 -7.998643186346e-2 -6.634975767000e-2 -6.634975483281e-2 -6.634975383477e-2 -5.600820173433e-2 -5.600820073142e-2 -5.600819794348e-2 -4.975503656227e-2 -4.975503542719e-2 -4.975503327316e-2 -3.578566009105e-2 -3.578565985148e-2 4.798893391342e-3 4.798898476824e-3 4.798903539318e-3 8.648234269776e-3 8.648238066000e-3 8.648241050972e-3 8.648243588644e-3 8.648245729455e-3 
+8.648247013120e-3 1.477964563691e-2 1.477964697642e-2 1.477964741994e-2 1.588748517613e-2 1.588748642794e-2 1.588748745477e-2 1.588749036190e-2 1.588749169785e-2 1.588749438113e-2 4.148702962369e-2 4.148703220677e-2 4.148703477811e-2 7.073622844992e-2 7.073623288047e-2 7.073623441674e-2 7.073623533740e-2 7.073623710114e-2 7.073623897447e-2 7.160197700062e-2 7.380520073005e-2 7.380520088674e-2 8.263090398276e-2 8.263090638610e-2 8.263090893122e-2 8.635144855723e-2 8.635145397099e-2 8.635145719731e-2 1.151800702394e-1 1.151800729461e-1 1.151800756516e-1 1.184453157315e-1 1.184453203963e-1 1.184453243648e-1 1.507291734635e-1 1.507291754726e-1 1.507291782723e-1 1.675041289065e-1 1.675041312018e-1 1.675041332512e-1 1.675041337852e-1 1.675041346333e-1 1.675041355282e-1 2.173218556452e-1 2.173218561857e-1 2.173218582282e-1 2.298803047403e-1 2.298803073831e-1 2.298803100038e-1 2.371883810539e-1 2.371883827492e-1 2.371883830937e-1 2.537290442577e-1 2.537290457018e-1 2.537290470184e-1 2.537290492658e-1 
+2.537290508057e-1 2.537290519925e-1 3.044171714289e-1 3.044171741789e-1 3.044171769077e-1 3.190474250359e-1 3.190474270208e-1 3.190474286869e-1 3.190474303890e-1 3.190474317326e-1 3.190474320918e-1 3.348922976498e-1 3.348923011209e-1 3.348923056477e-1 3.390624427365e-1 3.390624432770e-1 3.390624450817e-1 3.873605966086e-1 3.873605992831e-1 3.873606013781e-1 3.873606028480e-1 3.873606048408e-1 3.873606069991e-1 3.968551449401e-1 3.968551452802e-1 3.968551477695e-1 3.968551491402e-1 3.968551510340e-1 3.968551522442e-1 4.263160916710e-1 4.263160966051e-1 4.263161020001e-1 4.500460341468e-1 4.500460360439e-1 4.500460390635e-1 4.660387298668e-1 4.660387310865e-1 4.660387319931e-1 5.006199100081e-1 5.310256586273e-1 5.310256606799e-1 5.310256661135e-1</array>
+        </property>
+      </propertyList>
+    </propertyList>
+    <propertyList title="Energy Decomposition">
+      <property dictRef="siesta:Ebs">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-2382.745473</scalar>
+      </property>
+      <property dictRef="siesta:Eions">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">12185.667955</scalar>
+      </property>
+      <property dictRef="siesta:Ena">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">3675.141824</scalar>
+      </property>
+      <property dictRef="siesta:Ekin">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">2533.114728</scalar>
+      </property>
+      <property dictRef="siesta:Enl">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">957.843694</scalar>
+      </property>
+      <property dictRef="siesta:DEna">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">221.125572</scalar>
+      </property>
+      <property dictRef="siesta:DUscf">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">5.566640</scalar>
+      </property>
+      <property dictRef="siesta:DUext">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:Exc">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-2051.602746</scalar>
+      </property>
+      <property dictRef="siesta:Ecorrec">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:Emad">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:Emeta">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:Emm">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:Ekinion">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.000000</scalar>
+      </property>
+      <property dictRef="siesta:EharrsK">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.479439</scalar>
+      </property>
+      <property dictRef="siesta:EtotK">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.478244</scalar>
+      </property>
+      <property dictRef="siesta:FreeEK">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.478244</scalar>
+      </property>
+    </propertyList>
+    <propertyList title="Final Energy">
+      <property dictRef="siesta:Ebs">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-2382.7454732</scalar>
+      </property>
+      <property dictRef="siesta:Ekin">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">2533.1147279</scalar>
+      </property>
+      <property dictRef="siesta:Uscf">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">391.3802315</scalar>
+      </property>
+      <property dictRef="siesta:DUext">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.0000000</scalar>
+      </property>
+      <property dictRef="siesta:Exc">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-2051.6027464</scalar>
+      </property>
+      <property dictRef="siesta:I-e">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-3023.8353295</scalar>
+      </property>
+      <property dictRef="siesta:I-I">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-4693.5351274</scalar>
+      </property>
+      <property dictRef="siesta:Ekinion">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">0.0000000</scalar>
+      </property>
+      <property dictRef="siesta:Etot">
+        <scalar dataType="fpx:real" units="siestaUnits:eV">-6844.4782439</scalar>
+      </property>
+    </propertyList>
+    <property dictRef="siesta:stress">
+      <matrix rows="3" columns="3" dataType="fpx:real" units="siestaUnits:eV_Ang__3">-3.523934177767e-2 5.505805780508e-9 8.700639167471e-9 5.533814521581e-9 -3.523935224263e-2 3.700331892202e-9 8.712131602113e-9 3.712815245713e-9 -3.523934736800e-2</matrix>
+    </property>
+    <propertyList title="Final Pressure">
+      <property dictRef="siesta:cellvol" title="cell volume">
+        <scalar dataType="fpx:real" units="siestaUnits:Ang__3">1.280824056000e3</scalar>
+      </property>
+      <property dictRef="siesta:pressSol" title="Pressure of Solid">
+        <scalar dataType="fpx:real" units="siestaUnits:kbar">5.646026884073e1</scalar>
+      </property>
+      <property dictRef="siesta:pressMol" title="Pressure of Molecule">
+        <scalar dataType="fpx:real" units="siestaUnits:kbar">5.646031320276e1</scalar>
+      </property>
+    </propertyList>
+  </module>
+  <metadata name="siesta:EndTime" content="2011-06-10T14-39-36"/>
+  <metadata name="dc:contributor" content="FoX-4.0.4 (http://www.uszla.me.uk/FoX)"/>
+</cml>
