@@ -22,10 +22,12 @@ C                       IntegralOf( V * d_rho/d_strain ) / cell_volume
 C INTEGER NSM           : Number of sub-mesh points per mesh point
 C                       : along each axis
 !	use	m_dhscf, only : dhscf_init
-	use precision,   only : dp, grid_p
-	use m_timer, only: timer_init, timer_start, timer_stop, timer_report
-	use mesh,     only : nsm
-	!use fdf
+	use precision,	only : dp, grid_p
+	!use m_timer, only: timer_init, timer_start, timer_stop, timer_report
+	use mesh,	only : nsm
+!	use cudafor	!only : cudaEvent_t, cudaEventCreate, cudaEventDestroy, & 
+			!cudaEventRecord, cudaEventSynchronize, cudaEventElapsedTime
+	
 	!include 'curand.h'
 	!external nsm
 
@@ -40,7 +42,10 @@ C                       : along each axis
 	
 	integer			:: mesh(3)
 	real(grid_p)		:: RHO(N1,N2,N3), V(N1*N2*N3)
-	integer			:: i,j,k
+	integer			:: i,j,k, istat
+!	real			:: elapsedTime
+!	type(cudaEvent)		:: startEv, stopEv;
+	integer 		:: c0, c1, c2, c3, cgpu, chost
 	
 	
 	
@@ -63,23 +68,35 @@ C                       : along each axis
 	end do
 	end do
 	
-!	do i=1,N1
-!		write(*,*) (RHO(i,j,1), j=1,N2)
-!	end do
+!	istat = cudaEventCreate(startEv)
+!	istat = cudaEventCreate(stopEv)
 	
-	
-!	write(*,*) RHO
-	
-	call timer_init()
-	call timer_start('ACC Poison')
+!	call timer_init()
+!	call timer_start('ACC Poison')
+!	istat = cudaEventRecord(startEv,0)
+	call system_clock( count=c1 )
 	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS, nsm)
-	call timer_stop('ACC Poison')
-	call timer_report(printNow=.true.)
+	call system_clock( count=c2 )
+!	istat = cudaEventRecord(stopEv, 0)
+!	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
+!	write(*,*) 'ACC - elpsed time:\t\t', elapsedTime
+!	call timer_stop('ACC Poison')
+	!call timer_report(printNow=.true.)
 	
-	call timer_start('Original Poison')
+!	call timer_start('Original Poison')
+!	istat = cudaEventRecord(startEv,0)
 	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS, nsm)
-	call timer_stop('Original Poison')
-	call timer_report(printNow=.true.)
+	call system_clock( count=c3 )
+	cgpu = c2 - c1
+	chost = c3 - c2
+	print *, cgpu, ' microseconds on GPU'
+	print *, chost, ' microseconds on host'
+	
+!	istat = cudaEventRecord(stopEv, 0)
+!	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
+!	write(*,*) 'Original - elpsed time:\t', elapsedTime
+!	call timer_stop('Original Poison')
+	!call timer_report(printNow=.true.)
 	
 	
 	end program testpoison

@@ -214,32 +214,32 @@ C Free local memory
       return
       end
 
-      subroutine nfft( N )
+!      subroutine nfft( N )
 
-      use sys, only: die
-      use parallel, only: ionode
+!      use sys, only: die
+!      use parallel, only: ionode
 
-C CHANGES N INTO THE NEXT INTEGER ALLOWED BY THE FFT ROUTINE
-C WRITTEN BY J.M.SOLER. MAY/95.
+!C CHANGES N INTO THE NEXT INTEGER ALLOWED BY THE FFT ROUTINE
+!C WRITTEN BY J.M.SOLER. MAY/95.
 
-      integer :: np, nmax, nmin, n, nrem, ip
-      parameter (NP = 3, NMAX = 1000000)
-      integer :: IPRIME(NP)
-      data IPRIME / 2, 3, 5 /
+!      integer :: np, nmax, nmin, n, nrem, ip
+!      parameter (NP = 3, NMAX = 1000000)
+!      integer :: IPRIME(NP)
+!      data IPRIME / 2, 3, 5 /
 
-      NMIN = N
-      DO N = NMIN, NMAX
-        NREM = N
-        DO IP = 1,NP
-   10     CONTINUE 
-          IF ( MODULO( NREM, IPRIME(IP) ) .EQ. 0 ) THEN
-            NREM = NREM / IPRIME(IP)
-            GOTO 10
-          ENDIF
-        ENDDO
-        IF (NREM .EQ. 1) RETURN
-      ENDDO
-      if (Ionode)
-     $    write(6,*) 'NFFT: NO SUITABLE INTEGER FOUND FOR N =', NMIN
-      call die()
-      END
+!      NMIN = N
+!      DO N = NMIN, NMAX
+!        NREM = N
+!        DO IP = 1,NP
+!   10     CONTINUE 
+!          IF ( MODULO( NREM, IPRIME(IP) ) .EQ. 0 ) THEN
+!            NREM = NREM / IPRIME(IP)
+!            GOTO 10
+!          ENDIF
+!        ENDDO
+!        IF (NREM .EQ. 1) RETURN
+!      ENDDO
+!      if (Ionode)
+!     $    write(6,*) 'NFFT: NO SUITABLE INTEGER FOUND FOR N =', NMIN
+!      call die()
+!      END
