@@ -107,6 +107,7 @@ C Copy density to complex array
 
 C Find fourier transform of density
       call fft( CG, Mesh, -1, NSM )
+      write(*,*) 'Poison_orig'
  
 C Initialize stress contribution
       do IX = 1,3

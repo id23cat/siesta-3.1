@@ -44,6 +44,9 @@ C
       use parallel,    only : Node, Nodes, ProcessorY
       use sys,         only : die
       use alloc,       only : re_alloc, de_alloc
+#ifdef _OPENACC
+  	use openacc
+#endif
 #ifdef MPI
       use mpi_siesta
 #endif
@@ -72,7 +75,9 @@ C
 
       data K0   /3*0.0_dp/
       data TINY /1.0e-15_dp/
-
+#if _OPENACC
+	call acc_init(acc_device_nvidia)
+#endif
 #ifdef MPI
 C Place MPI barrier here so that any waiting time for all
 C nodes to reach this point isn't included in the time for
@@ -107,13 +112,7 @@ C Copy density to complex array
 
 C Find fourier transform of density
       call fft( CG, Mesh, -1, NSM )
- 
-C Initialize stress contribution
-      do IX = 1,3
-        do JX = 1,3
-          STRESS(JX,IX) = 0.0_dp
-        enddo
-      enddo
+      write(*,*) 'Poison'
 
 C Work out processor grid dimensions
       ProcessorZ = Nodes/ProcessorY
@@ -140,19 +139,37 @@ C Multiply by 8*PI/G2 to get the potential
       J3max = J3min + BlockSizeZ - 1
       if (Pz-1.lt.NRemZ) J3max = J3max + NSM
       J3max = min(J3max,NG3-1)
+      
 
+C Initialize stress contribution
+!$acc data create(G,U,C,G2,J2L,VG, DU) copy(CG) copyout(STRESS)
+!$acc kernels
+!$acc loop
+      do IX = 1,3
+!$acc loop
+        do JX = 1,3
+          STRESS(JX,IX) = 0.0_dp
+        enddo
+!$end loop
+      enddo
+!$end loop
+
+!$acc loop 
       do J3 = J3min,J3max
         if (J3.gt.NG3/2) then
           I3 = J3 - NG3
         else
           I3 = J3
         endif
+!$acc loop
         do J2 = J2min,J2max
           if (J2.gt.NG2/2) then
             I2 = J2 - NG2
           else
             I2 = J2
           endif
+
+!!$acc loop
           do J1 = 0,N1-1
             if (J1.gt.N1/2) then
               I1 = J1 - N1
@@ -183,19 +200,30 @@ C Multiply by 8*PI/G2 to get the potential
               CG(2,J) = 0.0_dp
             endif
           enddo
+!!$end loop
         enddo
+!$end loop
       enddo
+!$end loop
+
 
       NG = Mesh(1)*Mesh(2)*Mesh(3)
       U = 0.5_dp * U * VOLUME / DBLE(NG)**2
       C = 0.5_dp / DBLE(NG)**2
+!$acc loop      
       do IX = 1,3
+!$acc loop
         do JX = 1,3
           STRESS(JX,IX) = C * STRESS(JX,IX)
         enddo
+!$end loop
         STRESS(IX,IX) = STRESS(IX,IX) + U / VOLUME
       enddo
- 
+!$end loop
+!$acc end kernels
+!$acc end data
+
+
 C Go back to real space
       call fft( CG, Mesh, +1, NSM )
 

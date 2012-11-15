@@ -36,8 +36,8 @@ C                       : along each axis
 	
 	implicit none
 
-	integer,parameter	:: N=30
-	real(dp)		:: CELL(3,3), STRESS(3,3), U
+	integer,parameter	:: N=100
+	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), U
 	integer,parameter	:: N1=N, N2=N, N3=N
 	
 	integer			:: mesh(3)
@@ -63,7 +63,7 @@ C                       : along each axis
 	do i=1,N1
 	do j=1,N2
 	do k=1,N3
-		RHO(i,j,k) = 0.1_grid_p   !/((i-1)*N1+(j-1)*N2+1)
+		RHO(i,j,k) = N1*N2*N3/((i-1)*N1+(j-1)*N2+1)
 	end do
 	end do
 	end do
@@ -75,7 +75,7 @@ C                       : along each axis
 !	call timer_start('ACC Poison')
 !	istat = cudaEventRecord(startEv,0)
 	call system_clock( count=c1 )
-	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS, nsm)
+	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS_GPU, nsm)
 	call system_clock( count=c2 )
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
@@ -85,7 +85,7 @@ C                       : along each axis
 	
 !	call timer_start('Original Poison')
 !	istat = cudaEventRecord(startEv,0)
-	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS, nsm)
+	call poison_orig(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS_GPU, nsm)
 	call system_clock( count=c3 )
 	cgpu = c2 - c1
 	chost = c3 - c2
@@ -98,5 +98,13 @@ C                       : along each axis
 !	call timer_stop('Original Poison')
 	!call timer_report(printNow=.true.)
 	
+!	do i=1,3
+!	do j=1,3
+!		if(STRESS_CPU(i,j).ne.STRESS_GPU(i,j))
+!			print *, ' unequal in ', i,j,k
+!	end do
+!	end do
+	write(*,*) STRESS_CPU
+	write(*,*) STRESS_GPU
 	
 	end program testpoison
