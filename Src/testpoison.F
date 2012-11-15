@@ -36,12 +36,13 @@ C                       : along each axis
 	
 	implicit none
 
-	integer,parameter	:: N=100
-	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), U
+	integer,parameter	:: N=50
+	integer,parameter	:: LOOPS=1
+	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), UC, UG
 	integer,parameter	:: N1=N, N2=N, N3=N
 	
 	integer			:: mesh(3)
-	real(grid_p)		:: RHO(N1,N2,N3), V(N1*N2*N3)
+	real(grid_p)		:: RHO(N1,N2,N3), VC(N1*N2*N3), VG(N1*N2*N3)
 	integer			:: i,j,k, istat
 !	real			:: elapsedTime
 !	type(cudaEvent)		:: startEv, stopEv;
@@ -63,7 +64,7 @@ C                       : along each axis
 	do i=1,N1
 	do j=1,N2
 	do k=1,N3
-		RHO(i,j,k) = N1*N2*N3/((i-1)*N1+(j-1)*N2+1)
+		RHO(i,j,k) = 11.99+i+j+k !N1*N2*N3/((i-1)*N1+(j-1)*N2+1)
 	end do
 	end do
 	end do
@@ -75,7 +76,9 @@ C                       : along each axis
 !	call timer_start('ACC Poison')
 !	istat = cudaEventRecord(startEv,0)
 	call system_clock( count=c1 )
-	call poison(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS_GPU, nsm)
+	do i=1,LOOPS
+	call poison(CELL, N1, N2, N3, Mesh, RHO, UG, VG, STRESS_GPU, nsm)
+	enddo
 	call system_clock( count=c2 )
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
@@ -85,12 +88,14 @@ C                       : along each axis
 	
 !	call timer_start('Original Poison')
 !	istat = cudaEventRecord(startEv,0)
-	call poison_orig(CELL, N1, N2, N3, Mesh, RHO, U, V, STRESS_GPU, nsm)
+	do i=1,LOOPS
+	call poison_orig(CELL, N1, N2, N3, Mesh, RHO, UC, VC, STRESS_GPU, nsm)
+	enddo
 	call system_clock( count=c3 )
 	cgpu = c2 - c1
 	chost = c3 - c2
-	print *, cgpu, ' microseconds on GPU'
-	print *, chost, ' microseconds on host'
+	print *, cgpu/LOOPS, ' microseconds on GPU'
+	print *, chost/LOOPS, ' microseconds on host'
 	
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
@@ -104,7 +109,16 @@ C                       : along each axis
 !			print *, ' unequal in ', i,j,k
 !	end do
 !	end do
-	write(*,*) STRESS_CPU
-	write(*,*) STRESS_GPU
+
+!	write(*,*) STRESS_CPU
+!	write(*,*) STRESS_GPU
+!	write(*,*) 'U'
+!	write(*,*) UC
+!	write(*,*) UG
+!	write(*,*) 'V'
+!	write(*,*) VC
+!	write(*,*) VG
+
+!	write(*,*) RHO
 	
 	end program testpoison

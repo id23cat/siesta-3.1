@@ -123,8 +123,7 @@ C Work out processor grid dimensions
       Pz = Node - (Py - 1)*ProcessorZ + 1
 
 C Multiply by 8*PI/G2 to get the potential
-      PI = 4.0_dp * atan(1.0_dp)
-      U = 0.0_dp
+      
       NG2 = Mesh(2)
       NG3 = Mesh(3)
       BlockSizeY = ((NG2/NSM)/ProcessorY)*NSM
@@ -142,7 +141,9 @@ C Multiply by 8*PI/G2 to get the potential
       
 
 C Initialize stress contribution
-!$acc data create(G,U,C,G2,J2L,VG, DU) copy(CG) copyout(STRESS)
+!$acc data create(G,U,C,G2,J2L,VG,DU) copy(CG) copyout(STRESS)
+	PI = 4.0_dp * atan(1.0_dp)
+      U = 0.0_dp
 !$acc kernels
 !$acc loop
       do IX = 1,3
@@ -154,14 +155,14 @@ C Initialize stress contribution
       enddo
 !$end loop
 
-!$acc loop 
+!$acc loop independent
       do J3 = J3min,J3max
         if (J3.gt.NG3/2) then
           I3 = J3 - NG3
         else
           I3 = J3
         endif
-!$acc loop
+!$acc loop independent
         do J2 = J2min,J2max
           if (J2.gt.NG2/2) then
             I2 = J2 - NG2
@@ -169,7 +170,7 @@ C Initialize stress contribution
             I2 = J2
           endif
 
-!!$acc loop
+!$acc loop independent
           do J1 = 0,N1-1
             if (J1.gt.N1/2) then
               I1 = J1 - N1
