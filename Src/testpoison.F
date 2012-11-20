@@ -36,7 +36,7 @@ C                       : along each axis
 	
 	implicit none
 
-	integer,parameter	:: N=50
+	integer,parameter	:: N=100
 	integer,parameter	:: LOOPS=1
 	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), UC, UG
 	integer,parameter	:: N1=N, N2=N, N3=N
@@ -76,9 +76,9 @@ C                       : along each axis
 !	call timer_start('ACC Poison')
 !	istat = cudaEventRecord(startEv,0)
 	call system_clock( count=c1 )
-	do i=1,LOOPS
+	
 	call poison(CELL, N1, N2, N3, Mesh, RHO, UG, VG, STRESS_GPU, nsm)
-	enddo
+	
 	call system_clock( count=c2 )
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
@@ -88,14 +88,14 @@ C                       : along each axis
 	
 !	call timer_start('Original Poison')
 !	istat = cudaEventRecord(startEv,0)
-	do i=1,LOOPS
+	
 	call poison_orig(CELL, N1, N2, N3, Mesh, RHO, UC, VC, STRESS_GPU, nsm)
-	enddo
+	
 	call system_clock( count=c3 )
 	cgpu = c2 - c1
 	chost = c3 - c2
-	print *, cgpu/LOOPS, ' microseconds on GPU'
-	print *, chost/LOOPS, ' microseconds on host'
+	print *, cgpu, ' microseconds on GPU'
+	print *, chost, ' microseconds on host'
 	
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)

@@ -60,8 +60,13 @@ C
       integer           N1, N2, N3, Mesh(3), NSM
       real(grid_p)      RHO(N1*N2*N3), V(N1*N2*N3)
       real(dp)          CELL(3,3), STRESS(3,3), U
+      real(dp)		s11, s21, s31
+      real(dp)		s12, s22, s32
+      real(dp)		s13, s23, s33
+      
 
       real(grid_p), dimension(:,:), pointer  :: CG
+      real(grid_p), dimension(:) :: CG1, CG2
 
       integer           I, I1, I2, I3, IX, J, J1, J2, J3, JX,
      .                  NP, NG, NG2, NG3, 
@@ -72,12 +77,12 @@ C
      .                  K0(3), PI, TINY, VG, VOLUME, VOLCEL
       externaL          CHKGMX, FFT, RECLAT, VOLCEL
       save              K0, TINY
+      integer(dp) 	c1, c2, ctime
+      integer		t1
 
       data K0   /3*0.0_dp/
       data TINY /1.0e-15_dp/
-#if _OPENACC
-	call acc_init(acc_device_nvidia)
-#endif
+
 #ifdef MPI
 C Place MPI barrier here so that any waiting time for all
 C nodes to reach this point isn't included in the time for
@@ -90,6 +95,7 @@ C Start timer
 
 C Allocate local memory
       nullify( CG )
+      
       call re_alloc( CG, 1, 2, 1, n1*n2*n3, name='CG', 
      &                 routine='poison' )
 
@@ -139,90 +145,116 @@ C Multiply by 8*PI/G2 to get the potential
       if (Pz-1.lt.NRemZ) J3max = J3max + NSM
       J3max = min(J3max,NG3-1)
       
-
+call system_clock( count=c1 )
 C Initialize stress contribution
-!$acc data create(G,U,C,G2,J2L,VG,DU) copy(CG) copyout(STRESS)
+
 	PI = 4.0_dp * atan(1.0_dp)
-      U = 0.0_dp
-!$acc kernels
-!$acc loop
+      	U = 0.0_dp
+
       do IX = 1,3
-!$acc loop
         do JX = 1,3
           STRESS(JX,IX) = 0.0_dp
         enddo
-!$end loop
       enddo
-!$end loop
 
-!$acc loop independent
-      do J3 = J3min,J3max
-        if (J3.gt.NG3/2) then
-          I3 = J3 - NG3
-        else
-          I3 = J3
-        endif
-!$acc loop independent
-        do J2 = J2min,J2max
-          if (J2.gt.NG2/2) then
-            I2 = J2 - NG2
-          else
-            I2 = J2
-          endif
+	write(*,*) "J3min,J3max: ", J3min, J3max
+	write(*,*) "J2min,J2max: ", J2min, J2max
+	write(*,*) "N1= ", N1
+	
+	
+!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+!!$acc data copy(CG) copyout(U,STRESS) copyin(PI,B,N1,N2,NG3,NG2) !create(C,G2,J2L,VG,DU)
+!!$acc parallel !!reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33)
+!!$acc loop reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
+!      do J3 = J3min,J3max
+!        if (J3.gt.NG3/2) then
+!          I3 = J3 - NG3
+!        else
+!          I3 = J3
+!        endif
+!!$acc loop
+!        do J2 = J2min,J2max
+!          if (J2.gt.NG2/2) then
+!            I2 = J2 - NG2
+!          else
+!            I2 = J2
+!          endif
+!!$acc loop private(g) reduction(CG)
+!          do J1 = 0,N1-1
+!            if (J1.gt.N1/2) then
+!              I1 = J1 - N1
+!            else
+!              I1 = J1
+!            endif
+!            G(1)= B(1,1) * I1 + B(1,2) * I2 + B(1,3) * I3
+!            G(2)= B(2,1) * I1 + B(2,2) * I2 + B(2,3) * I3
+!            G(3)= B(3,1) * I1 + B(3,2) * I2 + B(3,3) * I3
+!            G2 = G(1)**2 + G(2)**2 + G(3)**2
+!            J2L = J2 - J2min 
+!            J3L = J3 - J3min 
+!            J = 1 + J1 + N1 * J2L + N1 * N2 * J3L
+!            if (G2.LT.G2MAX .AND. G2.GT.TINY) then
+!              VG = 8.0_dp * PI / G2
+!              DU = VG * ( CG(1,J)**2 + CG(2,J)**2 )
+!              U = U + DU
+!              C = 2.0_dp * DU / G2
+!              
+!               s11 = s11 + C * G(1) * G(1)
+!               s21 = s21 + C * G(1) * G(2)
+!               s31 = s31 + C * G(1) * G(3)
+!               
+!               s12 = s12 + C * G(2) * G(1)
+!               s22 = s22 + C * G(2) * G(2)
+!               s32 = s32 + C * G(2) * G(3)
+!               
+!               s13 = s13 + C * G(3) * G(1)
+!               s23 = s23 + C * G(3) * G(2)
+!               s33 = s33 + C * G(3) * G(3)
 
-!$acc loop independent
-          do J1 = 0,N1-1
-            if (J1.gt.N1/2) then
-              I1 = J1 - N1
-            else
-              I1 = J1
-            endif
-            G(1)= B(1,1) * I1 + B(1,2) * I2 + B(1,3) * I3
-            G(2)= B(2,1) * I1 + B(2,2) * I2 + B(2,3) * I3
-            G(3)= B(3,1) * I1 + B(3,2) * I2 + B(3,3) * I3
-            G2 = G(1)**2 + G(2)**2 + G(3)**2
-            J2L = J2 - J2min 
-            J3L = J3 - J3min 
-            J = 1 + J1 + N1 * J2L + N1 * N2 * J3L
-            if (G2.LT.G2MAX .AND. G2.GT.TINY) then
-              VG = 8.0_dp * PI / G2
-              DU = VG * ( CG(1,J)**2 + CG(2,J)**2 )
-              U = U + DU
-              C = 2.0_dp * DU / G2
-              DO IX = 1,3
-                DO JX = 1,3
-                  STRESS(JX,IX) = STRESS(JX,IX) + C * G(IX) * G(JX)
-                ENDDO
-              ENDDO
-              CG(1,J) = VG * CG(1,J)
-              CG(2,J) = VG * CG(2,J)
-            else
-              CG(1,J) = 0.0_dp
-              CG(2,J) = 0.0_dp
-            endif
-          enddo
+!!              DO IX = 1,3
+!!                DO JX = 1,3
+!!                  STRESS(JX,IX) = STRESS(JX,IX) + C * G(IX) * G(JX)
+!!                ENDDO
+!!              ENDDO
+
+!              CG(1,J) = VG * CG(1,J)
+!              CG(2,J) = VG * CG(2,J)
+!            else
+!              CG(1,J) = 0.0_dp
+!              CG(2,J) = 0.0_dp
+!            endif
+!          enddo
 !!$end loop
-        enddo
-!$end loop
-      enddo
-!$end loop
+!        enddo
+!!$end loop
+!      enddo
+!!$end loop
+!!$acc end parallel
+!!$acc end data
 
 
       NG = Mesh(1)*Mesh(2)*Mesh(3)
       U = 0.5_dp * U * VOLUME / DBLE(NG)**2
       C = 0.5_dp / DBLE(NG)**2
-!$acc loop      
+      
       do IX = 1,3
-!$acc loop
         do JX = 1,3
           STRESS(JX,IX) = C * STRESS(JX,IX)
         enddo
-!$end loop
         STRESS(IX,IX) = STRESS(IX,IX) + U / VOLUME
       enddo
-!$end loop
-!$acc end kernels
-!$acc end data
+
+	call system_clock( count=c2 )
+	ctime = c2 - c1
+
+	print *, 'MESH: ', MESH
+#if _OPENACC
+	print *, ctime, ' ~~~~~  microseconds on GPU'
+	
+#else
+	print *, ctime, ' ~~~~~ microseconds on host'
+#endif
+!	write(*,*) '~~~~~~~'
 
 
 C Go back to real space
