@@ -172,7 +172,7 @@ C Initialize stress contribution
       do J3 = J3min,J3max
 !$acc loop independent
         do J2 = J2min,J2max          
-!$acc loop vector reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
+!$acc loop private(G) reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
           do J1 = 0,N1-1
             if (J2.gt.NG2/2) then
               I2 = J2 - NG2

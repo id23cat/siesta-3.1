@@ -36,7 +36,7 @@ C                       : along each axis
 	
 	implicit none
 
-	integer,parameter	:: N=100
+	integer,parameter	:: N=500
 	integer,parameter	:: LOOPS=1
 	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), UC, UG
 	integer,parameter	:: N1=N, N2=N, N3=N
