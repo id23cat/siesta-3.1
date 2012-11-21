@@ -1,5 +1,6 @@
 #!/bin/sh
 
+touch ../Src/testpoison.F
 pgf95 -Minfo -g -c ../Src/testpoison.F -I/usr/local/cuda/include -o ./testpoison.o
 pgf95 -acc -fast -ta=nvidia,time,keepbin,keepgpu,keepptx,cuda4.2,cc20 -Minfo=accel -g -c ../Src/poison.F -o ./poison.o
 pgf95 -Minfo -fast -g -c ../Src/poison_orig.F -o ./poison_orig.o
