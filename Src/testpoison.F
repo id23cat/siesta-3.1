@@ -36,7 +36,7 @@ C                       : along each axis
 	
 	implicit none
 
-	integer,parameter	:: N=500
+	integer,parameter	:: N=100
 	integer,parameter	:: LOOPS=1
 	real(dp)		:: CELL(3,3), STRESS_CPU(3,3), STRESS_GPU(3,3), UC, UG
 	integer,parameter	:: N1=N, N2=N, N3=N
@@ -97,7 +97,7 @@ C                       : along each axis
 	call  SYSTEM_CLOCK( COUNT=c3 )
 	
 	cgpu=REAL((c2-c1)/clock_rate)
-	cgpu=REAL((c3-c2)/clock_rate)
+	chost=REAL((c3-c2)/clock_rate)
 	
 	print *, cgpu, ' microseconds on GPU'
 	print *, chost, ' microseconds on host'
