@@ -44,9 +44,10 @@ C                       : along each axis
 	integer			:: mesh(3)
 	real(grid_p)		:: RHO(N1,N2,N3), VC(N1*N2*N3), VG(N1*N2*N3)
 	integer			:: i,j,k, istat
-!	real			:: elapsedTime
+
 !	type(cudaEvent)		:: startEv, stopEv;
-	integer 		:: c0, c1, c2, c3, cgpu, chost
+	integer 		:: c0, c1, c2, c3, clock_rate
+	real			:: cgpu, chost
 	
 	
 	
@@ -75,11 +76,13 @@ C                       : along each axis
 !	call timer_init()
 !	call timer_start('ACC Poison')
 !	istat = cudaEventRecord(startEv,0)
-	call system_clock( count=c1 )
+
+	CALL SYSTEM_CLOCK(COUNT_RATE=clock_rate)
+	call  SYSTEM_CLOCK( COUNT=c1 )
 	
 	call poison(CELL, N1, N2, N3, Mesh, RHO, UG, VG, STRESS_GPU, nsm)
 	
-	call system_clock( count=c2 )
+	call  SYSTEM_CLOCK( COUNT=c2 )
 !	istat = cudaEventRecord(stopEv, 0)
 !	istat = cudaEventElapsedTime(elapsedTime, startEv, stopEv)
 !	write(*,*) 'ACC - elpsed time:\t\t', elapsedTime
@@ -91,9 +94,11 @@ C                       : along each axis
 	
 	call poison_orig(CELL, N1, N2, N3, Mesh, RHO, UC, VC, STRESS_GPU, nsm)
 	
-	call system_clock( count=c3 )
-	cgpu = c2 - c1
-	chost = c3 - c2
+	call  SYSTEM_CLOCK( COUNT=c3 )
+	
+	cgpu=REAL((c2-c1)/clock_rate)
+	cgpu=REAL((c3-c2)/clock_rate)
+	
 	print *, cgpu, ' microseconds on GPU'
 	print *, chost, ' microseconds on host'
 	
