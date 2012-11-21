@@ -77,9 +77,15 @@ C
      .                  K0(3), PI, TINY, VG, VOLUME, VOLCEL
       externaL          CHKGMX, FFT, RECLAT, VOLCEL
       save              K0, TINY
+<<<<<<< HEAD
       integer(dp)       c1, c2, rate
       real              ctime
       integer           t1
+=======
+      integer(dp) 	c1, c2, rate
+      real		ctime
+      integer		t1
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
 
       data K0   /3*0.0_dp/
       data TINY /1.0e-15_dp/
@@ -166,13 +172,21 @@ C Initialize stress contribution
 	
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
+<<<<<<< HEAD
 !$acc data copy(CG) copyout(U) copyin(PI,B,N1,N2,NG3,NG2) !create(C,G2,J2L,VG,DU)
+=======
+!$acc data copy(CG) copyout(U,STRESS) copyin(PI,B,N1,N2,NG3,NG2) !create(C,G2,J2L,VG,DU)
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
 !$acc kernels 
 !$acc loop independent
       do J3 = J3min,J3max
 !$acc loop independent
         do J2 = J2min,J2max          
+<<<<<<< HEAD
 !$acc loop private(G) reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
+=======
+!$acc loop private(g) reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
           do J1 = 0,N1-1
             if (J2.gt.NG2/2) then
               I2 = J2 - NG2
@@ -180,7 +194,11 @@ C Initialize stress contribution
               I2 = J2
             endif
             
+<<<<<<< HEAD
             if (J3.gt.NG3/2) then
+=======
+	    if (J3.gt.NG3/2) then
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
               I3 = J3 - NG3
             else
               I3 = J3
@@ -215,12 +233,18 @@ C Initialize stress contribution
                s13 = s13 + C * G(3) * G(1)
                s23 = s23 + C * G(3) * G(2)
                s33 = s33 + C * G(3) * G(3)
+<<<<<<< HEAD
+=======
+               
+              
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
 
 !              DO IX = 1,3
 !                DO JX = 1,3
 !                  STRESS(JX,IX) = STRESS(JX,IX) + C * G(IX) * G(JX)
 !                ENDDO
 !              ENDDO
+<<<<<<< HEAD
 
               CG(1,J) = VG * CG(1,J)
               CG(2,J) = VG * CG(2,J)
@@ -248,6 +272,35 @@ C Initialize stress contribution
          STRESS(1,3) = STRESS(1,3) + s13
          STRESS(2,3) = STRESS(2,3) + s23
          STRESS(3,3) = STRESS(3,3) + s33
+=======
+
+              CG(1,J) = VG * CG(1,J)
+              CG(2,J) = VG * CG(2,J)
+            else
+              CG(1,J) = 0.0_dp
+              CG(2,J) = 0.0_dp
+            endif
+          enddo
+!$end loop
+        enddo
+!$end loop
+      enddo
+!$end loop
+!$acc end kernels
+!$acc end data
+
+	 STRESS(1,1) = s11
+         STRESS(2,1) = s21
+         STRESS(3,1) = s31
+               
+         STRESS(1,2) = s12
+         STRESS(2,2) = s22
+         STRESS(3,2) = s32
+               
+         STRESS(1,3) = s13
+         STRESS(2,3) = s23
+         STRESS(3,3) = s33
+>>>>>>> 1a7ce6d256b9ffb1c7d2b2766841d9f1a6faf588
 
 
       NG = Mesh(1)*Mesh(2)*Mesh(3)
