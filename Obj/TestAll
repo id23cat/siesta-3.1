@@ -1,0 +1,37 @@
+#!/bin/sh
+
+cd Tests
+for i in $(ls -d */); do TEST="$TEST ${i%%/}"; done
+rm CPUGPU.compare
+cd ..
+
+for i in $TEST
+do
+        touch ../Src/poison.F
+        make
+        cd ./Tests/${i}
+        make clean 
+        make
+        HTIME=`cat ${i}.out|grep '~~'`
+        mv ${i}.out ${i}.out.cpu
+        cd ../..
+
+        touch ../Src/poison.F
+        make -e FFLAGS="-acc -Minfo=accel -fast -g -ta=nvidia " LIBS="-llapack -lblas -acclibs -Mcuda"
+        cd ./Tests/${i}/
+        make clean 
+        make
+        GTIME=`cat ${i}.out|grep '~~'`
+        mv $TEST.out ${i}.out.gpu
+
+        cd ..
+        echo "${i} GPU:" >> ../CPUGPU.compare
+        cat ${i}.out.gpu|grep POISON  >> ../CPUGPU.compare
+        echo "${i} CPU:"  >> ../CPUGPU.compare
+        cat ${i}.out.cpu|grep POISON >> ../CPUGPU.compare
+done
+
+#echo HTIME:
+#echo $HTIME
+#echo GTIME:
+#echo $GTIME

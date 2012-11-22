@@ -25,8 +25,7 @@ C                       : along each axis
 	use precision,	only : dp, grid_p
 	!use m_timer, only: timer_init, timer_start, timer_stop, timer_report
 	use mesh,	only : nsm
-!	use cudafor	!only : cudaEvent_t, cudaEventCreate, cudaEventDestroy, & 
-			!cudaEventRecord, cudaEventSynchronize, cudaEventElapsedTime
+				!cudaEventRecord, cudaEventSynchronize, cudaEventElapsedTime
 	
 	!include 'curand.h'
 	!external nsm
@@ -48,8 +47,6 @@ C                       : along each axis
 !	type(cudaEvent)		:: startEv, stopEv;
 	integer 		:: c0, c1, c2, c3, clock_rate
 	real			:: cgpu, chost
-	
-	
 	
 	mesh(1) = N1
 	mesh(2) = N2

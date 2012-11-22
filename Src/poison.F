@@ -164,15 +164,18 @@ C Initialize stress contribution
 !	write(*,*) "N1= ", N1
 	
 	
+	write(*,*) "~~~CG size", size(CG)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-!$acc data copy(CG) copyout(U) copyin(PI,B,N1,N2,NG3,NG2) !create(C,G2,J2L,VG,DU)
+!$acc data copy(CG) copyout(U,s11,s21,s31,s12,s22,s32,s13,s23,s33) 
+!$accx copyin(NG3,NG2,N1,N2,PI,B,G2MAX,TINY) 
 !$acc kernels 
-!$acc loop independent
+!$acc loop independent 
       do J3 = J3min,J3max
-!$acc loop independent
+!$acc loop independent 
         do J2 = J2min,J2max          
-!$acc loop private(G) reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U)
+!$acc loop reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U) 
+!$accx private(G)
           do J1 = 0,N1-1
             if (J2.gt.NG2/2) then
               I2 = J2 - NG2

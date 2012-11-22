@@ -8,21 +8,25 @@ else
 fi
 
 touch ../Src/poison.F
-make
-cd ./Tests/$TEST
-make clean 
-make
-HTIME=`cat $TEST.out|grep '~~'`
-mv $TEST.out $TEST.out.cpu
-cd ../..
-
-touch ../Src/poison.F
 make -e FFLAGS="-acc -Minfo=accel -fast -g -ta=nvidia " LIBS="-llapack -lblas -acclibs -Mcuda"
 cd ./Tests/$TEST/
+rm $TEST.out.gpu
 make clean 
 make
 GTIME=`cat $TEST.out|grep '~~'`
 mv $TEST.out $TEST.out.gpu
+cd ../..
+
+touch ../Src/poison.F
+make
+cd ./Tests/$TEST
+rm $TEST.out.cpu
+make clean 
+make
+HTIME=`cat $TEST.out|grep '~~'`
+mv $TEST.out $TEST.out.cpu
+
+
 
 echo "$TEST GPU:"
 cat $TEST.out.gpu|grep POISON
@@ -33,3 +37,5 @@ cat $TEST.out.cpu|grep POISON
 #echo $HTIME
 #echo GTIME:
 #echo $GTIME
+
+echo "fe GPU:" && cat fe.out.gpu|grep POISON && echo "fe CPU:" && cat fe.out.cpu|grep POISON
