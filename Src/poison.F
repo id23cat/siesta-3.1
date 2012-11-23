@@ -167,15 +167,21 @@ C Initialize stress contribution
 	write(*,*) "~~~CG size", size(CG)
 
 !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!11
-!$acc data copy(CG) copyout(U,s11,s21,s31,s12,s22,s32,s13,s23,s33) 
-!$accx copyin(NG3,NG2,N1,N2,PI,B,G2MAX,TINY) 
-!$acc kernels 
-!$acc loop independent 
+!$acc data copy(CG) copyout(U,s11,s21,s31,s12,s22,s32,s13,s23,s33)
+!$accx copyin(B,NG3,NG2,N1,N2,PI,G2MAX,TINY) !cache(B(1:3,1:3))
+!!$acc kernels 
+!$acc parallel
+!!$acc loop gang vector(256)
+!!$accx independent
+!$acc loop collapse( 3 ) private(G)
+!!$accx independent
       do J3 = J3min,J3max
-!$acc loop independent 
+!!acc loop independent
+!!$accx independent
         do J2 = J2min,J2max          
-!$acc loop reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U) 
-!$accx private(G)
+!!$acc loop private(G) 
+!!$accx reduction(+:s11,s21,s31,s12,s22,s32,s13,s23,s33,U) 
+!!$accx independent gang vector(16)
           do J1 = 0,N1-1
             if (J2.gt.NG2/2) then
               I2 = J2 - NG2
@@ -232,12 +238,13 @@ C Initialize stress contribution
               CG(2,J) = 0.0_dp
             endif
           enddo
-!$end loop
+!!$end loop
         enddo
-!$end loop
+!!$end loop
       enddo
 !$end loop
-!$acc end kernels
+!!$acc end kernels
+!$acc end parallel
 !$acc end data
 
 	 STRESS(1,1) = STRESS(1,1) + s11

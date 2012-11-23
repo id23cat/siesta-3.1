@@ -38,4 +38,4 @@ cat $TEST.out.cpu|grep POISON
 #echo GTIME:
 #echo $GTIME
 
-echo "fe GPU:" && cat fe.out.gpu|grep POISON && echo "fe CPU:" && cat fe.out.cpu|grep POISON
+#echo "fe GPU:" && cat fe.out.gpu|grep POISON && echo "fe CPU:" && cat fe.out.cpu|grep POISON
